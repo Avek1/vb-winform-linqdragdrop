@@ -108,6 +108,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="My Project\DataSources\Category.datasource" />
+    <None Include="My Project\DataSources\Product.datasource" />
     <None Include="Northwind.dbml.layout">
       <DependentUpon>Northwind.dbml</DependentUpon>
     </None>
