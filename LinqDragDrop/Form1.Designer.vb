@@ -24,6 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim CategoryIDLabel As System.Windows.Forms.Label
+        Dim DiscontinuedLabel As System.Windows.Forms.Label
+        Dim ProductNameLabel As System.Windows.Forms.Label
+        Dim QuantityPerUnitLabel As System.Windows.Forms.Label
+        Dim UnitPriceLabel As System.Windows.Forms.Label
+        Dim UnitsInStockLabel As System.Windows.Forms.Label
+        Dim UnitsOnOrderLabel As System.Windows.Forms.Label
         Me.ProductBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -38,22 +45,23 @@ Partial Class Form1
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ProductBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.ProductDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoryIDLabel1 = New System.Windows.Forms.Label()
+        Me.DiscontinuedCheckBox = New System.Windows.Forms.CheckBox()
+        Me.ProductNameTextBox = New System.Windows.Forms.TextBox()
+        Me.QuantityPerUnitTextBox = New System.Windows.Forms.TextBox()
+        Me.UnitPriceTextBox = New System.Windows.Forms.TextBox()
+        Me.UnitsInStockTextBox = New System.Windows.Forms.TextBox()
+        Me.UnitsOnOrderTextBox = New System.Windows.Forms.TextBox()
+        CategoryIDLabel = New System.Windows.Forms.Label()
+        DiscontinuedLabel = New System.Windows.Forms.Label()
+        ProductNameLabel = New System.Windows.Forms.Label()
+        QuantityPerUnitLabel = New System.Windows.Forms.Label()
+        UnitPriceLabel = New System.Windows.Forms.Label()
+        UnitsInStockLabel = New System.Windows.Forms.Label()
+        UnitsOnOrderLabel = New System.Windows.Forms.Label()
         CType(Me.ProductBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProductBindingNavigator.SuspendLayout()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProductBindingNavigator
@@ -172,91 +180,148 @@ Partial Class Form1
         Me.ProductBindingNavigatorSaveItem.Size = New System.Drawing.Size(24, 24)
         Me.ProductBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'ProductDataGridView
+        'CategoryIDLabel
         '
-        Me.ProductDataGridView.AutoGenerateColumns = False
-        Me.ProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewCheckBoxColumn1, Me.DataGridViewTextBoxColumn10})
-        Me.ProductDataGridView.DataSource = Me.ProductBindingSource
-        Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProductDataGridView.Location = New System.Drawing.Point(0, 27)
-        Me.ProductDataGridView.Name = "ProductDataGridView"
-        Me.ProductDataGridView.RowTemplate.Height = 24
-        Me.ProductDataGridView.Size = New System.Drawing.Size(357, 303)
-        Me.ProductDataGridView.TabIndex = 1
+        CategoryIDLabel.AutoSize = True
+        CategoryIDLabel.Location = New System.Drawing.Point(12, 85)
+        CategoryIDLabel.Name = "CategoryIDLabel"
+        CategoryIDLabel.Size = New System.Drawing.Size(86, 17)
+        CategoryIDLabel.TabIndex = 1
+        CategoryIDLabel.Text = "Category ID:"
         '
-        'DataGridViewTextBoxColumn1
+        'CategoryIDLabel1
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ProductID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ProductID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.CategoryIDLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "CategoryID", True))
+        Me.CategoryIDLabel1.Location = New System.Drawing.Point(138, 85)
+        Me.CategoryIDLabel1.Name = "CategoryIDLabel1"
+        Me.CategoryIDLabel1.Size = New System.Drawing.Size(104, 23)
+        Me.CategoryIDLabel1.TabIndex = 2
+        Me.CategoryIDLabel1.Text = "Label1"
         '
-        'DataGridViewTextBoxColumn2
+        'DiscontinuedLabel
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "ProductName"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "ProductName"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DiscontinuedLabel.AutoSize = True
+        DiscontinuedLabel.Location = New System.Drawing.Point(12, 245)
+        DiscontinuedLabel.Name = "DiscontinuedLabel"
+        DiscontinuedLabel.Size = New System.Drawing.Size(94, 17)
+        DiscontinuedLabel.TabIndex = 3
+        DiscontinuedLabel.Text = "Discontinued:"
         '
-        'DataGridViewTextBoxColumn3
+        'DiscontinuedCheckBox
         '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "SupplierID"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "SupplierID"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DiscontinuedCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.ProductBindingSource, "Discontinued", True))
+        Me.DiscontinuedCheckBox.Location = New System.Drawing.Point(138, 240)
+        Me.DiscontinuedCheckBox.Name = "DiscontinuedCheckBox"
+        Me.DiscontinuedCheckBox.Size = New System.Drawing.Size(104, 24)
+        Me.DiscontinuedCheckBox.TabIndex = 4
+        Me.DiscontinuedCheckBox.Text = "CheckBox1"
+        Me.DiscontinuedCheckBox.UseVisualStyleBackColor = True
         '
-        'DataGridViewTextBoxColumn4
+        'ProductNameLabel
         '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "CategoryID"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "CategoryID"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        ProductNameLabel.AutoSize = True
+        ProductNameLabel.Location = New System.Drawing.Point(12, 58)
+        ProductNameLabel.Name = "ProductNameLabel"
+        ProductNameLabel.Size = New System.Drawing.Size(102, 17)
+        ProductNameLabel.TabIndex = 5
+        ProductNameLabel.Text = "Product Name:"
         '
-        'DataGridViewTextBoxColumn5
+        'ProductNameTextBox
         '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "QuantityPerUnit"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "QuantityPerUnit"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.ProductNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "ProductName", True))
+        Me.ProductNameTextBox.Location = New System.Drawing.Point(138, 55)
+        Me.ProductNameTextBox.Name = "ProductNameTextBox"
+        Me.ProductNameTextBox.ReadOnly = True
+        Me.ProductNameTextBox.Size = New System.Drawing.Size(198, 22)
+        Me.ProductNameTextBox.TabIndex = 6
         '
-        'DataGridViewTextBoxColumn6
+        'QuantityPerUnitLabel
         '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "UnitPrice"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "UnitPrice"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        QuantityPerUnitLabel.AutoSize = True
+        QuantityPerUnitLabel.Location = New System.Drawing.Point(12, 120)
+        QuantityPerUnitLabel.Name = "QuantityPerUnitLabel"
+        QuantityPerUnitLabel.Size = New System.Drawing.Size(120, 17)
+        QuantityPerUnitLabel.TabIndex = 7
+        QuantityPerUnitLabel.Text = "Quantity Per Unit:"
         '
-        'DataGridViewTextBoxColumn7
+        'QuantityPerUnitTextBox
         '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "UnitsInStock"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "UnitsInStock"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.QuantityPerUnitTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "QuantityPerUnit", True))
+        Me.QuantityPerUnitTextBox.Location = New System.Drawing.Point(138, 117)
+        Me.QuantityPerUnitTextBox.Name = "QuantityPerUnitTextBox"
+        Me.QuantityPerUnitTextBox.Size = New System.Drawing.Size(104, 22)
+        Me.QuantityPerUnitTextBox.TabIndex = 8
         '
-        'DataGridViewTextBoxColumn8
+        'UnitPriceLabel
         '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "UnitsOnOrder"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "UnitsOnOrder"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        UnitPriceLabel.AutoSize = True
+        UnitPriceLabel.Location = New System.Drawing.Point(12, 148)
+        UnitPriceLabel.Name = "UnitPriceLabel"
+        UnitPriceLabel.Size = New System.Drawing.Size(73, 17)
+        UnitPriceLabel.TabIndex = 9
+        UnitPriceLabel.Text = "Unit Price:"
         '
-        'DataGridViewTextBoxColumn9
+        'UnitPriceTextBox
         '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "ReorderLevel"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "ReorderLevel"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.UnitPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "UnitPrice", True))
+        Me.UnitPriceTextBox.Location = New System.Drawing.Point(138, 145)
+        Me.UnitPriceTextBox.Name = "UnitPriceTextBox"
+        Me.UnitPriceTextBox.Size = New System.Drawing.Size(104, 22)
+        Me.UnitPriceTextBox.TabIndex = 10
         '
-        'DataGridViewCheckBoxColumn1
+        'UnitsInStockLabel
         '
-        Me.DataGridViewCheckBoxColumn1.DataPropertyName = "Discontinued"
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "Discontinued"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        UnitsInStockLabel.AutoSize = True
+        UnitsInStockLabel.Location = New System.Drawing.Point(12, 176)
+        UnitsInStockLabel.Name = "UnitsInStockLabel"
+        UnitsInStockLabel.Size = New System.Drawing.Size(98, 17)
+        UnitsInStockLabel.TabIndex = 11
+        UnitsInStockLabel.Text = "Units In Stock:"
         '
-        'DataGridViewTextBoxColumn10
+        'UnitsInStockTextBox
         '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Category"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Category"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.UnitsInStockTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "UnitsInStock", True))
+        Me.UnitsInStockTextBox.Location = New System.Drawing.Point(138, 173)
+        Me.UnitsInStockTextBox.Name = "UnitsInStockTextBox"
+        Me.UnitsInStockTextBox.Size = New System.Drawing.Size(104, 22)
+        Me.UnitsInStockTextBox.TabIndex = 12
+        '
+        'UnitsOnOrderLabel
+        '
+        UnitsOnOrderLabel.AutoSize = True
+        UnitsOnOrderLabel.Location = New System.Drawing.Point(12, 204)
+        UnitsOnOrderLabel.Name = "UnitsOnOrderLabel"
+        UnitsOnOrderLabel.Size = New System.Drawing.Size(108, 17)
+        UnitsOnOrderLabel.TabIndex = 13
+        UnitsOnOrderLabel.Text = "Units On Order:"
+        '
+        'UnitsOnOrderTextBox
+        '
+        Me.UnitsOnOrderTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "UnitsOnOrder", True))
+        Me.UnitsOnOrderTextBox.Location = New System.Drawing.Point(138, 201)
+        Me.UnitsOnOrderTextBox.Name = "UnitsOnOrderTextBox"
+        Me.UnitsOnOrderTextBox.Size = New System.Drawing.Size(104, 22)
+        Me.UnitsOnOrderTextBox.TabIndex = 14
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(357, 330)
-        Me.Controls.Add(Me.ProductDataGridView)
+        Me.ClientSize = New System.Drawing.Size(357, 419)
+        Me.Controls.Add(CategoryIDLabel)
+        Me.Controls.Add(Me.CategoryIDLabel1)
+        Me.Controls.Add(DiscontinuedLabel)
+        Me.Controls.Add(Me.DiscontinuedCheckBox)
+        Me.Controls.Add(ProductNameLabel)
+        Me.Controls.Add(Me.ProductNameTextBox)
+        Me.Controls.Add(QuantityPerUnitLabel)
+        Me.Controls.Add(Me.QuantityPerUnitTextBox)
+        Me.Controls.Add(UnitPriceLabel)
+        Me.Controls.Add(Me.UnitPriceTextBox)
+        Me.Controls.Add(UnitsInStockLabel)
+        Me.Controls.Add(Me.UnitsInStockTextBox)
+        Me.Controls.Add(UnitsOnOrderLabel)
+        Me.Controls.Add(Me.UnitsOnOrderTextBox)
         Me.Controls.Add(Me.ProductBindingNavigator)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -264,7 +329,6 @@ Partial Class Form1
         Me.ProductBindingNavigator.ResumeLayout(False)
         Me.ProductBindingNavigator.PerformLayout()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -284,16 +348,11 @@ Partial Class Form1
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents ProductBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents ProductDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents CategoryIDLabel1 As Label
+    Friend WithEvents DiscontinuedCheckBox As CheckBox
+    Friend WithEvents ProductNameTextBox As TextBox
+    Friend WithEvents QuantityPerUnitTextBox As TextBox
+    Friend WithEvents UnitPriceTextBox As TextBox
+    Friend WithEvents UnitsInStockTextBox As TextBox
+    Friend WithEvents UnitsOnOrderTextBox As TextBox
 End Class

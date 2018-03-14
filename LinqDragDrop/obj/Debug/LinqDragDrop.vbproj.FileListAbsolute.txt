@@ -9,3 +9,4 @@ C:\SF.Code\PluralSight\vb-windows-forms-intro-with-vb\LinqDragDrop\LinqDragDrop\
 C:\SF.Code\PluralSight\vb-windows-forms-intro-with-vb\LinqDragDrop\LinqDragDrop\obj\Debug\LinqDragDrop.exe
 C:\SF.Code\PluralSight\vb-windows-forms-intro-with-vb\LinqDragDrop\LinqDragDrop\obj\Debug\LinqDragDrop.xml
 C:\SF.Code\PluralSight\vb-windows-forms-intro-with-vb\LinqDragDrop\LinqDragDrop\obj\Debug\LinqDragDrop.pdb
+C:\SF.Code\PluralSight\vb-windows-forms-intro-with-vb\LinqDragDrop\LinqDragDrop\obj\Debug\LinqDragDrop.Form2.resources
